@@ -7,3 +7,6 @@
 * Use a image tag to load an image that is hosted on same box
 * Set a background color that is not white
 
+
+## index.html:
+* HTML page that is hosted on the AWS server
