@@ -1,0 +1,21 @@
+.board {
+    text-align: center;
+    padding: 50px;
+}
+
+.boardButton {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
+
+.control {
+    padding-top: 50px;
+    text-align: center;
+
+}
+
+.info {
+    text-align: center;
+    padding-top: 50px;
+}
