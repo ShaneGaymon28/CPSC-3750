@@ -1,3 +1,8 @@
+# Project 6 - create-react-app front end
+  In this project, I created a front end using create-react-app for my project 5 RESTful API.
+  
+  More information about getting started with create-react-app is at bottom of this readme.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
