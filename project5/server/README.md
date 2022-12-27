@@ -6,28 +6,30 @@
   
   API routes are defined using expressjs. 
   
+  Code is in server.js
+  
 ## Routes
-  GET /students
+  GET /students - gets all students
   
-  POST /students
+  POST /students - adds a student
   
-  DELETE /students/:username
+  DELETE /students/:username - delete student with matching username
   
-  GET /students/:id
+  GET /students/:id - get student with id
   
-  PUT /students/:id
+  PUT /students/:id - modify student with id
   
-  GET /grades
+  GET /grades - get all grades
   
-  POST /grades
+  POST /grades - add a grade
   
-  GET /grades/:id
+  GET /grades/:id - get a grade with id
   
-  PUT /grades/:id
+  PUT /grades/:id - modify a grade with id
   
-  DELETE /grades/:id
+  DELETE /grades/:id - delete a grade with id
   
-  DELETE /db
+  DELETE /db - delete the entire database
   
   
 ## The Database (Redis)
