@@ -64,7 +64,6 @@ const checkEnd = () => {
     }
 
     // check diagonals
-    // ** I'm still using checkStraight to check diagonals because its straight, just sideways
     if (checkStraight(
         board[0][0], board[1][1], board[2][2]
     ) == true) {
@@ -110,9 +109,6 @@ const checkTie = function(){
 }
 
 
-//isnt an arrow function because this way it can use 'this' 
-//to reference the button clicked.
-//
 //always sets aiFirst button to disabled
 //sets button state (disabled and inner html)
 //checks for end state (and possible ends game)
@@ -149,7 +145,6 @@ const boardOnClick = function(i, j, event){
 }
 
 //changes playerMark global, calls aiGo
-// this is called when the let ai go first button is clicked, the rest go to the boardOnClick function
 const aiFirstOnClick = () => {
     console.log("AI first was clicked")
     
@@ -199,21 +194,16 @@ const endGame = (state)=>{
 //builds out buttons and saves them in control assoc array
 //and adds them into controlsNode
 //attaches the functions above as button.onclick as appropriate
-
-// needs to be like this so we can let the page load before JS starts running
 const load = ()=>{
-    boardNode = document.getElementById("board") // board node is a pointer 
+    boardNode = document.getElementById("board") // pointer to board
     controlNode = document.getElementById("controls") // to keep track of control buttons
     infoNode = document.getElementById("gameInformation") // displays winner, lets you know a space is taken
 
     remainingMoves = 9
 
     for(let i = 0; i < 3; i++){
-
         board[i] = []
-
         const div = document.createElement("div")
-        
         boardNode.appendChild(div)
 
         for(let j = 0; j < 3; j++){

@@ -119,7 +119,6 @@ const clearUsers= () => {
 }
 
 
-// *************************************
 //given a password and salt 
 //uses crypto libraries returns a sha256 hash of password+salt base64 encoded
 const computeHash = (password, salt)=>{
@@ -168,9 +167,6 @@ app.delete('/db',(req,res)=>{
 	res.sendStatus(200);
 })
 
-/*
- * login/index.html form posts here
- */
 
 //endpoint to authenticate users
 //should redirect back to login with error if anything goes wrong

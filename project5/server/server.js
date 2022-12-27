@@ -68,8 +68,6 @@ app.use(function(req,res,next){
 		case "PUT":
 		case "DELETE":
 			//extract the given credentials from the request
-
-			/****Check that creds exist before getting name *****/
 			const creds = auth(req);
 			let name = creds.name;
 
@@ -202,11 +200,7 @@ const filterSortPaginate = (type, queryArgs, items) =>{
 	return items;
 };
 
-/**
- * these functions return 200 or 404
- */
 
-// done
 app.get('/students/:id',function(req,res){
 	
 	//Hint use HGETALL
@@ -214,7 +208,8 @@ app.get('/students/:id',function(req,res){
 		.then(student => !student.id ? res.sendStatus(404) : res.json({...student, _ref:`/students/${req.params.id}`}))
 
 });
-// done
+
+
 app.get('/students',function(req,res){
 	// smembers to get the keys, hgetall to get the fields
 	//TODO fill out the function
@@ -246,7 +241,7 @@ app.get('/students',function(req,res){
 
 });
 
-// done
+
 app.post('/students',function(req,res){
 	//TODO
 	//Hint: use sadd and HSET
@@ -274,7 +269,7 @@ app.post('/students',function(req,res){
 
 });
 
-// done
+
 app.delete('/students/:id',function(req,res){
 	//TODO
 	//Hint use a Promise.all of DEL and SREM
@@ -302,7 +297,7 @@ app.delete('/students/:id',function(req,res){
 		})
 });
 
-//done
+
 app.put('/students/:id',function(req,res){
 	//TODO
 	//Hint: use client.HEXISTS and HSET
@@ -329,7 +324,7 @@ app.put('/students/:id',function(req,res){
 
 });
 
-// done
+
 app.post('/grades',function(req,res){
 	//TODO
 	//Hint use INCR and HSET
@@ -353,7 +348,7 @@ app.post('/grades',function(req,res){
 
 });
 
-// done
+
 app.get('/grades/:id',function(req,res){
 	//TODO
 	//Hint use HGETALL
@@ -364,6 +359,7 @@ app.get('/grades/:id',function(req,res){
 			res.status(400).send();
 		})
 });
+
 app.put('/grades/:id',function(req,res){
 	//TODO
 	//Hint use HEXISTS and HSET
@@ -394,7 +390,7 @@ app.put('/grades/:id',function(req,res){
 
 });
 
-// done - maybe?
+
 app.delete('/grades/:id',function(req,res){
 	//TODO
 	//Hint use DEL .....duh
@@ -402,7 +398,7 @@ app.delete('/grades/:id',function(req,res){
 		.then((result) => result < 1 ? res.sendStatus(404) : res.json({_ref:`/grades/${req.params.id}`}))
 });
 
-// done
+
 app.get('/grades',function(req,res){
 	//TODO
 	//Hint use GET, HGETALL
@@ -432,6 +428,7 @@ app.get('/grades',function(req,res){
 		})
 
 });
+
 app.delete('/db',function(req,res){
 	client.FLUSHALL().then(function(){
 		//make sure the test user credentials exist
